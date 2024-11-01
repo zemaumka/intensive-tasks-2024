@@ -1,24 +1,49 @@
 package com.walking.intensive.chapter2.task6;
 
 /**
- * Условие: <a href="https://geometry-math.ru/homework/Java-NOKNOD.html">ссылка</a>
+ * Реализуйте представленные ниже методы для расчета
+ * НОК (наименьшее общее кратное) и НОД (наибольший общий делитель).
+ *
+ * <p><a href="https://github.com/KFalcon2022/intensive-tasks-2024/blob/master/README.md">Требования к оформлению</a>
  */
 public class Task6 {
     public static void main(String[] args) {
 
     }
 
-    static int getNoc(int m, int n) {
+    /**
+     * Реализуйте метод, который будет возвращать НОК для чисел, переданных параметрами.
+     *
+     * <p>Входные параметры - положительные целые числа.
+     *
+     * <p>Если входные данные некорректны - метод должен возвращать -1.
+     */
+    static int getLcm(int m, int n) {
         // Ваш код
         return 0;
     }
 
-    static int getNod(int m, int n) {
+    /**
+     * Реализуйте метод, который будет возвращать НОД для чисел, переданных параметрами.
+     *
+     * <p>Входные параметры - положительные целые числа.
+     *
+     * <p>Если входные данные некорректны - метод должен возвращать -1.
+     */
+    static int getGcd(int m, int n) {
         // Ваш код
         return 0;
     }
 
-    static int getNodByEuclideanAlgorithm(int m, int n){
+    /**
+     * Реализуйте метод, который будет возвращать НОК для чисел, переданных параметрами.
+     * Расчет должен производиться с помощью алгоритма Евклида
+     *
+     * <p>Входные параметры - положительные целые числа.
+     *
+     * <p>Если входные данные некорректны - метод должен возвращать -1.
+     */
+    static int getGcdByEuclideanAlgorithm(int m, int n){
         // Ваш код
         return 0;
     }

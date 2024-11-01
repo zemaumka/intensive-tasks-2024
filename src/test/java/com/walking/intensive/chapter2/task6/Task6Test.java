@@ -15,21 +15,21 @@ class Task6Test {
     @ParameterizedTest
     @MethodSource("nocData")
     void getNocTest(int expected, int m, int n) {
-        int noc = getNoc(m, n);
+        int noc = getLcm(m, n);
         assertEquals(expected, noc);
     }
 
     @ParameterizedTest
     @MethodSource("nodData")
     void getNodTest(int expected, int m, int n) {
-        int nod = getNod(m, n);
+        int nod = getGcd(m, n);
         assertEquals(expected, nod);
     }
 
     @ParameterizedTest
     @MethodSource("nodData")
     void getNodByEuclideanAlgorithmTest(int expected, int m, int n) {
-        int nod = getNodByEuclideanAlgorithm(m, n);
+        int nod = getGcdByEuclideanAlgorithm(m, n);
         assertEquals(expected, nod);
     }
 
