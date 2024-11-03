@@ -33,7 +33,8 @@ class Task10Test {
                 of(false, "Муза, ранясь шилом опыта, ты помолишься на разумы"),
                 of(false, "A"),
                 of(false, "В русской литературе достоверно известно"),
-                of(false, null)
+                of(false, null),
+                of(false, "")
         );
     }
 }

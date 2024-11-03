@@ -11,7 +11,7 @@ class Task9Test {
     void getPascalTriangleTest() {
         String pascalTriangle = getPascalTriangle(25);
         System.out.println(pascalTriangle);
-
+        //TODO реализовать оптимистичные кейсы
         assertEquals("", getPascalTriangle(-10));
         assertEquals("", getPascalTriangle(-0));
     }
