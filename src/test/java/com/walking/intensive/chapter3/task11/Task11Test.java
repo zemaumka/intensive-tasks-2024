@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.walking.intensive.chapter3.task11.Task11.getSumSubarraysOddLength;
+import static com.walking.intensive.chapter3.task11.Task11.getOddSubArraysElementsSum;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Task11Test {
@@ -15,7 +15,7 @@ public class Task11Test {
     @MethodSource("testDataSource")
     void testGetSumSubarraysOddLength(int[] array, int expectedSum) {
         // when
-        var result = getSumSubarraysOddLength(array);
+        var result = getOddSubArraysElementsSum(array);
 
         // then
         assertEquals(expectedSum, result);

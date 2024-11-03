@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.walking.intensive.chapter3.task13.Task13.getCountSteps;
+import static com.walking.intensive.chapter3.task13.Task13.getStepsCount;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -16,9 +16,9 @@ public class Task13Test {
 
     @ParameterizedTest
     @MethodSource("testDataSource")
-    void testGetCountSteps(int[] plants, int wateringCanVolume, int expectedCountOfSteps) {
+    void testGetStepsCount(int[] plants, int wateringCanVolume, int expectedCountOfSteps) {
         // when
-        var result = getCountSteps(plants, wateringCanVolume);
+        var result = getStepsCount(plants, wateringCanVolume);
 
         // then
         assertEquals(expectedCountOfSteps, result);
