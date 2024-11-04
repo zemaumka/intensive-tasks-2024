@@ -25,17 +25,8 @@ public class Task5 {
      */
     static double getAreaByHeron(double a, double b, double c) {
         //        Место для вашего кода
-        if (a <=0 || b <=0 || c<=0){
-            return -1;
-        }
 
-        if (a+b>c && b+c>a && a+c>b) {
-            double p = (a+b+c)/2;
-            double sWithoutRoot = p * (p - a) * (p - b) * (p - c);
-            return Math.pow(sWithoutRoot,0.5); // Заглушка. При реализации - удалить
-        } else {
-            return -1;
-        }
+        return 0; // Заглушка. При реализации - удалить
     }
 
     /**
