@@ -30,7 +30,7 @@ public class Task7 {
 
     }
 
-    static int getFriendlyPair(int n){
+    static int getFriendlyPair(int n) {
         // Ваш код
         return 0;
     }

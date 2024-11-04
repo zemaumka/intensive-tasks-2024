@@ -43,9 +43,8 @@ public class Task6 {
      *
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
-    static int getGcdByEuclideanAlgorithm(int m, int n){
+    static int getGcdByEuclideanAlgorithm(int m, int n) {
         // Ваш код
         return 0;
     }
-
 }
