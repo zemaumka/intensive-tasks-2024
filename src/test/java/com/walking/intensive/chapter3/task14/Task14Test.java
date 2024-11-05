@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-import static com.walking.intensive.chapter3.task14.Task14.getCountOfPoints;
+import static com.walking.intensive.chapter3.task14.Task14.getObjectCounts;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -18,9 +18,9 @@ public class Task14Test {
 
     @ParameterizedTest
     @MethodSource("testDataSource")
-    void testGetCountOfPoints(int[][] points, int[][] queries, int[] expectedCountOfPoints) {
+    void testGetObjectCounts(int[][] points, int[][] queries, int[] expectedCountOfPoints) {
         // when
-        var result = getCountOfPoints(points, queries);
+        var result = getObjectCounts(points, queries);
 
         // then
         assertEquals(queries.length, result.length);
