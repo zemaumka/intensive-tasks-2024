@@ -14,5 +14,7 @@ class Task7Test {
         assertEquals(6368, getFriendlyPair(10000));
         assertEquals(-1, getFriendlyPair(-200));
         assertEquals(-1, getFriendlyPair(0));
+        assertEquals(-1, getFriendlyPair(1_000_000));
+        assertEquals(-1, getFriendlyPair(1_123_123));
     }
 }
