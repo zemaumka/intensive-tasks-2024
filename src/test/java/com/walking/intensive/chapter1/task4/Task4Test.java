@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.walking.intensive.chapter1.task4.Task4.solveQuadraticEquation;
+import static com.walking.intensive.chapter1.task4.Task4.solveEquation;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.of;
 
@@ -14,8 +14,8 @@ class Task4Test {
 
     @ParameterizedTest
     @MethodSource("dataSource")
-    void solveQuadraticEquationTest(String expected, double a, double b, double c) {
-        assertEquals(expected, solveQuadraticEquation(a, b, c));
+    void solveEquationTest(String expected, double a, double b, double c) {
+        assertEquals(expected, solveEquation(a, b, c));
     }
 
     static Stream<Arguments> dataSource() {
