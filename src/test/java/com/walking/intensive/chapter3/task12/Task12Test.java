@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static com.walking.intensive.chapter3.task12.Task12.getMovementsNumber;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -21,12 +22,17 @@ public class Task12Test {
 
         // then
         assertEquals(baskets.length(), result.length);
-        assertTrue(Arrays.equals(expectedArray, result));
+        assertArrayEquals(expectedArray, result);
     }
 
     static Stream<Arguments> testDataSource() {
         return Stream.of(
                 Arguments.of("001011", new int[]{11, 8, 5, 4, 3, 4}),
-                Arguments.of("110", new int[]{1, 1, 3}));
+                Arguments.of("110", new int[]{1, 1, 3}),
+                Arguments.of("235", new int[]{}),
+                Arguments.of("fgh432", new int[]{}),
+                Arguments.of("-110", new int[]{}),
+                Arguments.of("%&)(5_=:Привет", new int[]{}),
+                Arguments.of("11010T", new int[]{}));
     }
 }

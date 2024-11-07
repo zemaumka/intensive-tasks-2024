@@ -28,6 +28,11 @@ public class Task13Test {
         return Stream.of(
                 Arguments.of(new int[]{1, 1, 1, 4, 2, 3}, 4, 30),
                 Arguments.of(new int[]{2, 2, 3, 3}, 5, 14),
-                Arguments.of(new int[]{7, 7, 7, 7, 7, 7, 7}, 8, 49));
+                Arguments.of(new int[]{7, 7, 7, 7, 7, 7, 7}, 8, 49),
+                Arguments.of(new int[]{}, 3, 0),
+                Arguments.of(new int[]{7, 1, 0, 5, 3}, 8, -1),
+                Arguments.of(new int[]{3, 7, 2, 7, 6, 7, 1, 15, 19}, 0, -1),
+                Arguments.of(new int[]{4, 3, 1, 8, 4, 1, 5}, -5, -1),
+                Arguments.of(new int[]{4, -1, -2, -4, -5, -6, -7}, 8, -1));
     }
 }

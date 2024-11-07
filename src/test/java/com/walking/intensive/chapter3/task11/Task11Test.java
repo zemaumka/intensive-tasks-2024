@@ -25,6 +25,12 @@ public class Task11Test {
         return Stream.of(
                 Arguments.of(new int[]{10, 11, 12}, 66),
                 Arguments.of(new int[]{1, 2}, 3),
-                Arguments.of(new int[]{1, 4, 2, 5, 3}, 58));
+                Arguments.of(new int[]{1, 4, 2, 5, 3}, 58),
+                Arguments.of(new int[]{}, 0),
+                Arguments.of(new int[]{15}, 15),
+                Arguments.of(new int[]{1, 2, 3, -1}, -1),
+                Arguments.of(new int[]{-10, 2, 3, 4}, -1),
+                Arguments.of(new int[]{4, 3, 2, 1, -4, 5, 0, 9}, -1),
+                Arguments.of(new int[]{-15}, -1));
     }
 }
