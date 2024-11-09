@@ -47,7 +47,8 @@
    Интерфейс на скриншотах может отличаться от привычного вам. Тогда
    смотрим [здесь](https://www.jetbrains.com/help/idea/2022.3/manage-branches.html)
 2. Решаем задачу, проверяем ее с помощью `main()`.
-3. Создаем коммит с решением. В нем должен быть изменен только один класс, убедитесь, что не добавили ничего лишнего.
+3. Создаем коммит с решением. В нем должен быть изменен только один класс (кроме задачи 19), убедитесь,
+   что не добавили ничего лишнего.
 4. Делаем Push коммита.
 5. Создаем Pull Request на ветку `master` в основном репозитории.
    Коротко [здесь](https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
