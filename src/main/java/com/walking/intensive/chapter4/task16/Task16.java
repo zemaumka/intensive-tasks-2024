@@ -232,8 +232,8 @@ public class Task16 {
      * <p>Входные данные: [1,2,3,4]
      * <p>Возвращаемое значение: [4,1,2,3]
      */
-    static boolean shiftIndex(int[] arr) {
+    static int[] shiftIndex(int[] arr) {
         // Ваш код
-        return false;
+        return null;
     }
 }
