@@ -20,7 +20,7 @@
 Заранее рекомендую ознакомиться со статьями:
 
 1. [Системы контроля версий. Git. Github](https://telegra.ph/Sistemy-kontrolya-versij-Git-Github-11-18)
-2. [GitHub. Fork и Pull Request](https://telegra.ph/GitHub-Fork-i-Pull-Request-11-25)
+2. [GitHub. Fork и Pull Request](https://telegra.ph/GitHub-Fork-i-Pull-Request-11-25).
 
 По мере сил, каждое действий ниже будет снабжаться ссылкой с краткой инструкцией
 
@@ -36,7 +36,7 @@
 необходимости этого действия будут соответствующие объявления в чате. Коротко о синхронизации
 [здесь](https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui)
 
-Позже здесь будет опубликована видеоинструкция с демонстрацией описанных действий
+Так же у нас есть видео [инструкция](https://youtu.be/az44RDiM9m0)
 
 ## Алгоритм выполнения и отправки задач на проверку
 
