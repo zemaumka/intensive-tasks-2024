@@ -36,7 +36,7 @@
 необходимости этого действия будут соответствующие объявления в чате. Коротко о синхронизации
 [здесь](https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui)
 
-Так же у нас есть видео [инструкция](https://youtu.be/az44RDiM9m0)
+Так же у нас есть видео [инструкция](https://youtu.be/FInK62h801o)
 
 ## Алгоритм выполнения и отправки задач на проверку
 
