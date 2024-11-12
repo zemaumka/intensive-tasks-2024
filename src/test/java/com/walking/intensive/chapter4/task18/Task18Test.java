@@ -23,7 +23,8 @@ public class Task18Test {
                 Arguments.of(new int[]{5, 10, 15, 20, 25, 30, 35, 40, 45, 50}, 45, 45),
                 Arguments.of(new int[]{1, 3, 5, 7, 9, 11, 13}, 8, 7),
                 Arguments.of(new int[]{1, 8, 10, 20, 30, 40, 45}, 41, 40),
-                Arguments.of(new int[]{1, 8, 10, 20, 30, 40, 45}, 29, 20)
+                Arguments.of(new int[]{1, 8, 10, 20, 30, 40, 45}, 29, 20),
+                Arguments.of(new int[]{}, 7, -1)
         );
     }
 }
