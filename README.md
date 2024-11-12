@@ -52,7 +52,7 @@
 4. Делаем Push коммита.
 5. Создаем Pull Request на ветку `master` в основном репозитории.
    Коротко [здесь](https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
-6. Название Pull Request должно быть указано в формате "Chapter N, Task M", где N - номер главы, M - номер задачи.
+6. Название Pull Request должно быть указано в формате "Task N", где N - номер задачи.
 7. При получении замечаний по решению, исправляем их и пушим коммит с правками. По возможности все изменения 
    после ревью стоит добавлять одним коммитом. 
 8. Оповещаем ревьюера, если знаете, кто проверял ваш код.
