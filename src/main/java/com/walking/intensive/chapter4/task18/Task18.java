@@ -50,7 +50,7 @@ public class Task18 {
      *      задачей за 21 сравнение (O(log(n))) против 1 000 000 сравнений перебором O(n).
      * </ul>
      */
-    private static int find(int[] girlAges, int targetAge) {
+    static int find(int[] girlAges, int targetAge) {
         // Ваш код
         return 0;
     }
