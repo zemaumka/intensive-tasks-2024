@@ -24,7 +24,7 @@ public class Task1 {
 
         int ostHundred = age % 100;
         int ostTen = age % 10;
-        String result = "";
+        String result;
 
         if (age < 0) {
             return "Некорректный ввод";
