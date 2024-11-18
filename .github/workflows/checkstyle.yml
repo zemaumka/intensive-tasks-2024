@@ -4,7 +4,7 @@ on:
   pull_request:
     branches:
       - master
-    types: [opened, reopened, review_requested]
+    types: [opened, reopened, edited, review_requested]
 
 jobs:
   checkstyle:
