@@ -54,7 +54,7 @@ public class Task2 {
         }
 
         int flatSerialNumber = (flatNumber - (entranceNumber - 1) * (floorAmount * 4));
-        int floorNumber = 1;
+        int floorNumber;
 
         if (flatSerialNumber % 4 > 0) {
             floorNumber = flatSerialNumber / 4 + 1;
