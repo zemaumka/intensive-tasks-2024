@@ -62,18 +62,21 @@ public class Task2 {
             floorNumber = flatSerialNumber / 4;
         }
 
-        if ((flatSerialNumber % 4) == 1) {
-            return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, слева от лифта, влево";
-        }
+        int result = flatSerialNumber % 4;
 
-        if ((flatSerialNumber % 4) == 2) {
-            return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, слева от лифта, вправо";
-        }
-
-        if ((flatSerialNumber % 4) == 3) {
-            return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, справа от лифта, влево";
-        }
-
-        return flatNumber + " кв - " + entranceNumber + " подъезд, " + floorNumber + " этаж, справа от лифта, вправо";
+        return switch (result) {
+            case 1 ->
+                    flatNumber + " кв - " + entranceNumber +
+                            " подъезд, " + floorNumber + " этаж, слева от лифта, влево";
+            case 2 ->
+                    flatNumber + " кв - " + entranceNumber +
+                            " подъезд, " + floorNumber + " этаж, слева от лифта, вправо";
+            case 3 ->
+                    flatNumber + " кв - " + entranceNumber +
+                            " подъезд, " + floorNumber + " этаж, справа от лифта, влево";
+            default ->
+                    flatNumber + " кв - " + entranceNumber +
+                            " подъезд, " + floorNumber + " этаж, справа от лифта, вправо";
+        };
     }
 }
