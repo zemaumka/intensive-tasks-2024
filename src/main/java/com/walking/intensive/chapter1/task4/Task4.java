@@ -45,7 +45,7 @@ public class Task4 {
         if (discr == 0) {
             double root = -b / (2 * a);
             root = root == -0 ? 0 : root;
-            return "Количество решений: 1. Корень: " + Double.toString(root);
+            return "Количество решений: 1. Корень: " + String.valueOf(root);
         }
 
         if (a == 0) {
