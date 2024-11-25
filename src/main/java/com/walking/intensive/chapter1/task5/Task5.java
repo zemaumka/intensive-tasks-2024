@@ -79,10 +79,8 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getMedians(double a, double b, double c) {
-        double[] m;
-
         if (isCheckInput(a, b, c)) {
-            m = new double[3];
+            double[] m = new double[3];
             m[0] = 0.5 * (Math.sqrt(2 * Math.pow(b, 2) + 2 * Math.pow(c, 2) - Math.pow(a, 2)));
             m[1] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(c, 2) - Math.pow(b, 2)));
             m[2] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(b, 2) - Math.pow(c, 2)));
@@ -90,7 +88,7 @@ public class Task5 {
             return m;
         }
 
-        return m = new double[0];
+        return new double[0];
     }
 
     /**
@@ -101,11 +99,9 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getBisectors(double a, double b, double c) {
-        double[] bis;
-
         if (isCheckInput(a, b, c)) {
             double p = (a + b + c) / 2;
-            bis = new double[3];
+            double[] bis = new double[3];
             bis[0] = (2 * Math.sqrt(b * c * p * (p - a))) / (b + c);
             bis[1] = (2 * Math.sqrt(a * c * p * (p - b))) / (a + c);
             bis[2] = (2 * Math.sqrt(a * b * p * (p - c))) / (a + b);
@@ -113,7 +109,7 @@ public class Task5 {
             return bis;
         }
 
-        return bis = new double[0];
+        return new double[0];
     }
 
     /**
@@ -124,10 +120,8 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getAngles(double a, double b, double c) {
-        double[] ang;
-
         if (isCheckInput(a, b, c)) {
-            ang = new double[3];
+            double[] ang = new double[3];
             ang[0] = Math.acos((Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)) / (2 * a * c)) * 180
                     / Math.PI;
             ang[1] = Math.acos((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)) / (2 * a * b)) * 180
@@ -137,7 +131,7 @@ public class Task5 {
             return ang;
         }
 
-        return ang = new double[0];
+        return new double[0];
     }
 
     /**
