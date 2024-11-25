@@ -49,13 +49,13 @@ public class Task4 {
         }
 
         if (a == 0) {
-            return "Количество решений: 1. Корень: " + String.valueOf(-c / b);
+            return "Количество решений: 1. Корень: " + (-c / b);
         }
 
         double x1 = (-b + Math.sqrt(discr)) / 2 * a;
         double x2 = (-b - Math.sqrt(discr)) / 2 * a;
 
-        return "Количество решений: 2. Корни: " + String.valueOf(Math.min(x1, x2)) + ";"
-                + String.valueOf(Math.max(x1, x2));
+        return "Количество решений: 2. Корни: " + (Math.min(x1, x2)) + ";"
+                + (Math.max(x1, x2));
     }
 }
