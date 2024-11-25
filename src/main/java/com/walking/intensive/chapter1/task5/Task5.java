@@ -57,19 +57,19 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getHeights(double a, double b, double c) {
-        double[] h;
+
 
         if (isCheckInput(a, b, c)) {
             double S = getAreaByHeron(a, b, c);
-            h = new double[3];
+            double h[] = new double[3];
             h[0] = 2 * S / b;
             h[1] = 2 * S / a;
             h[2] = 2 * S / c;
             Arrays.sort(h);
             return h;
         }
-
-        return h = new double[0];
+        double[] h = new double[0];
+        return h;
     }
 
     /**
