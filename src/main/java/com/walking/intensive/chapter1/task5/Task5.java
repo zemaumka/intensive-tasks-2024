@@ -1,5 +1,7 @@
 package com.walking.intensive.chapter1.task5;
 
+import java.util.Arrays;
+
 /**
  * Задача поиска площади, величин углов, длин высот, биссектрис, медиан, радиусов вписанной и описанной вокруг
  * треугольника окружностей является центральной в Геометрии.
@@ -11,6 +13,21 @@ package com.walking.intensive.chapter1.task5;
 public class Task5 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
+        double a = 12;
+        double b = 13;
+        double c = 5;
+        System.out.println(getAreaByHeron(a, b, c));
+        System.out.println(Arrays.toString(getHeights(a, b, c)));
+        System.out.println(Arrays.toString(getMedians(a, b, c)));
+        System.out.println(Arrays.toString(getBisectors(a, b, c)));
+        System.out.println(Arrays.toString(getBisectors(a, b, c)));
+        System.out.println(Arrays.toString(getAngles(a, b, c)));
+        System.out.println((getInscribedCircleRadius(a, b, c)));
+        System.out.println((getAreaAdvanced(a, b, c)));
+    }
+
+    static boolean isCheckInput(double a, double b, double c) {
+        return a + b > c && b + c > a && c + a > b;
     }
 
     /**
@@ -23,9 +40,13 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getAreaByHeron(double a, double b, double c) {
-        //        Место для вашего кода
+        double p = (a + b + c) / 2;
 
-        return 0; // Заглушка. При реализации - удалить
+        if (isCheckInput(a, b, c)) {
+            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        }
+
+        return -1;
     }
 
     /**
@@ -36,9 +57,19 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getHeights(double a, double b, double c) {
-        //        Место для вашего кода
+        double[] h;
 
-        return null; // Заглушка. При реализации - удалить
+        if (isCheckInput(a, b, c)) {
+            double S = getAreaByHeron(a, b, c);
+            h = new double[3];
+            h[0] = 2 * S / b;
+            h[1] = 2 * S / a;
+            h[2] = 2 * S / c;
+            Arrays.sort(h);
+            return h;
+        }
+
+        return h = new double[0];
     }
 
     /**
@@ -49,9 +80,18 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getMedians(double a, double b, double c) {
-        //        Место для вашего кода
+        double[] m;
 
-        return null; // Заглушка. При реализации - удалить
+        if (isCheckInput(a, b, c)) {
+            m = new double[3];
+            m[0] = 0.5 * (Math.sqrt(2 * Math.pow(b, 2) + 2 * Math.pow(c, 2) - Math.pow(a, 2)));
+            m[1] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(c, 2) - Math.pow(b, 2)));
+            m[2] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(b, 2) - Math.pow(c, 2)));
+            Arrays.sort(m);
+            return m;
+        }
+
+        return m = new double[0];
     }
 
     /**
@@ -62,9 +102,19 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getBisectors(double a, double b, double c) {
-        //        Место для вашего кода
+        double[] bis;
 
-        return null; // Заглушка. При реализации - удалить
+        if (isCheckInput(a, b, c)) {
+            double p = (a + b + c) / 2;
+            bis = new double[3];
+            bis[0] = (2 * Math.sqrt(b * c * p * (p - a))) / (b + c);
+            bis[1] = (2 * Math.sqrt(a * c * p * (p - b))) / (a + c);
+            bis[2] = (2 * Math.sqrt(a * b * p * (p - c))) / (a + b);
+            Arrays.sort(bis);
+            return bis;
+        }
+
+        return bis = new double[0];
     }
 
     /**
@@ -75,9 +125,20 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getAngles(double a, double b, double c) {
-        //        Место для вашего кода
+        double[] ang;
 
-        return null; // Заглушка. При реализации - удалить
+        if (isCheckInput(a, b, c)) {
+            ang = new double[3];
+            ang[0] = Math.acos((Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)) / (2 * a * c)) * 180
+                    / Math.PI;
+            ang[1] = Math.acos((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)) / (2 * a * b)) * 180
+                    / Math.PI;
+            ang[2] = 180 - (ang[0] + ang[1]);
+            Arrays.sort(ang);
+            return ang;
+        }
+
+        return ang = new double[0];
     }
 
     /**
@@ -88,9 +149,11 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getInscribedCircleRadius(double a, double b, double c) {
-        //        Место для вашего кода
+        if (isCheckInput(a, b, c)) {
+            return getAreaByHeron(a, b, c) / ((a + b + c) / 2);
+        }
 
-        return 0; // Заглушка. При реализации - удалить
+        return -1;
     }
 
     /**
@@ -101,9 +164,11 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getCircumradius(double a, double b, double c) {
-        //        Место для вашего кода
+        if (isCheckInput(a, b, c)) {
+            return (a * b * c) / (4 * getAreaByHeron(a, b, c));
+        }
 
-        return 0; // Заглушка. При реализации - удалить
+        return -1;
     }
 
     /**
@@ -121,8 +186,12 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getAreaAdvanced(double a, double b, double c) {
-        //        Место для вашего кода
+        if (isCheckInput(a, b, c)) {
+            double cosine = (Math.pow(c, 2) + Math.pow(b, 2) - Math.pow(a, 2)) / (2 * b * c);
+            double sine = Math.sqrt(1 - Math.pow(cosine, 2));
+            return (b * c * sine) / 2;
+        }
 
-        return 0; // Заглушка. При реализации - удалить
+        return -1;
     }
 }
