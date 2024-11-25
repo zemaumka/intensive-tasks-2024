@@ -61,15 +61,14 @@ public class Task5 {
 
         if (isCheckInput(a, b, c)) {
             double S = getAreaByHeron(a, b, c);
-            double h[] = new double[3];
+            double[] h = new double[3];
             h[0] = 2 * S / b;
             h[1] = 2 * S / a;
             h[2] = 2 * S / c;
             Arrays.sort(h);
             return h;
         }
-        double[] h = new double[0];
-        return h;
+        return new double[0];
     }
 
     /**
