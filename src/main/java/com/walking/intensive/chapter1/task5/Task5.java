@@ -40,13 +40,12 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getAreaByHeron(double a, double b, double c) {
-        double p = (a + b + c) / 2;
-
-        if (isCheckInput(a, b, c)) {
-            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        if (!isCheckInput(a, b, c)) {
+            return -1;
         }
 
-        return -1;
+        double p = (a + b + c) / 2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
     /**
@@ -57,18 +56,17 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getHeights(double a, double b, double c) {
-
-
-        if (isCheckInput(a, b, c)) {
-            double area = getAreaByHeron(a, b, c);
-            double[] height = new double[3];
-            height[0] = 2 * area / b;
-            height[1] = 2 * area / a;
-            height[2] = 2 * area / c;
-            Arrays.sort(height);
-            return height;
+        if (!isCheckInput(a, b, c)) {
+            return new double[0];
         }
-        return new double[0];
+
+        double area = getAreaByHeron(a, b, c);
+        double[] heights = new double[3];
+        heights[0] = 2 * area / b;
+        heights[1] = 2 * area / a;
+        heights[2] = 2 * area / c;
+        Arrays.sort(heights);
+        return heights;
     }
 
     /**
@@ -79,16 +77,16 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getMedians(double a, double b, double c) {
-        if (isCheckInput(a, b, c)) {
-            double[] median = new double[3];
-            median[0] = 0.5 * (Math.sqrt(2 * Math.pow(b, 2) + 2 * Math.pow(c, 2) - Math.pow(a, 2)));
-            median[1] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(c, 2) - Math.pow(b, 2)));
-            median[2] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(b, 2) - Math.pow(c, 2)));
-            Arrays.sort(median);
-            return median;
+        if (!isCheckInput(a, b, c)) {
+            return new double[0];
         }
 
-        return new double[0];
+        double[] medians = new double[3];
+        medians[0] = 0.5 * (Math.sqrt(2 * Math.pow(b, 2) + 2 * Math.pow(c, 2) - Math.pow(a, 2)));
+        medians[1] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(c, 2) - Math.pow(b, 2)));
+        medians[2] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(b, 2) - Math.pow(c, 2)));
+        Arrays.sort(medians);
+        return medians;
     }
 
     /**
@@ -99,17 +97,17 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getBisectors(double a, double b, double c) {
-        if (isCheckInput(a, b, c)) {
-            double p = (a + b + c) / 2;
-            double[] bis = new double[3];
-            bis[0] = (2 * Math.sqrt(b * c * p * (p - a))) / (b + c);
-            bis[1] = (2 * Math.sqrt(a * c * p * (p - b))) / (a + c);
-            bis[2] = (2 * Math.sqrt(a * b * p * (p - c))) / (a + b);
-            Arrays.sort(bis);
-            return bis;
+        if (!isCheckInput(a, b, c)) {
+            return new double[0];
         }
 
-        return new double[0];
+        double p = (a + b + c) / 2;
+        double[] bisectors = new double[3];
+        bisectors[0] = (2 * Math.sqrt(b * c * p * (p - a))) / (b + c);
+        bisectors[1] = (2 * Math.sqrt(a * c * p * (p - b))) / (a + c);
+        bisectors[2] = (2 * Math.sqrt(a * b * p * (p - c))) / (a + b);
+        Arrays.sort(bisectors);
+        return bisectors;
     }
 
     /**
@@ -120,18 +118,17 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать пустой массив нулевой длины.
      */
     static double[] getAngles(double a, double b, double c) {
-        if (isCheckInput(a, b, c)) {
-            double[] ang = new double[3];
-            ang[0] = Math.acos((Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)) / (2 * a * c)) * 180
-                    / Math.PI;
-            ang[1] = Math.acos((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)) / (2 * a * b)) * 180
-                    / Math.PI;
-            ang[2] = 180 - (ang[0] + ang[1]);
-            Arrays.sort(ang);
-            return ang;
+        if (!isCheckInput(a, b, c)) {
+            return new double[0];
         }
-
-        return new double[0];
+        double[] angles= new double[3];
+        angles[0] = Math.acos((Math.pow(a, 2) + Math.pow(c, 2) - Math.pow(b, 2)) / (2 * a * c)) * 180
+            / Math.PI;
+        angles[1] = Math.acos((Math.pow(a, 2) + Math.pow(b, 2) - Math.pow(c, 2)) / (2 * a * b)) * 180
+            / Math.PI;
+        angles[2] = 180 - (angles[0] + angles[1]);
+        Arrays.sort(angles);
+        return angles;
     }
 
     /**
@@ -142,11 +139,11 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getInscribedCircleRadius(double a, double b, double c) {
-        if (isCheckInput(a, b, c)) {
-            return getAreaByHeron(a, b, c) / ((a + b + c) / 2);
+        if (!isCheckInput(a, b, c)) {
+            return -1;
         }
 
-        return -1;
+        return getAreaByHeron(a, b, c) / ((a + b + c) / 2);
     }
 
     /**
@@ -157,11 +154,11 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getCircumradius(double a, double b, double c) {
-        if (isCheckInput(a, b, c)) {
-            return (a * b * c) / (4 * getAreaByHeron(a, b, c));
+        if (!isCheckInput(a, b, c)) {
+            return -1;
         }
 
-        return -1;
+        return (a * b * c) / (4 * getAreaByHeron(a, b, c));
     }
 
     /**
@@ -179,12 +176,12 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getAreaAdvanced(double a, double b, double c) {
-        if (isCheckInput(a, b, c)) {
-            double cosine = (Math.pow(c, 2) + Math.pow(b, 2) - Math.pow(a, 2)) / (2 * b * c);
-            double sine = Math.sqrt(1 - Math.pow(cosine, 2));
-            return (b * c * sine) / 2;
+        if (!isCheckInput(a, b, c)) {
+            return -1;
         }
 
-        return -1;
+        double cosine = (Math.pow(c, 2) + Math.pow(b, 2) - Math.pow(a, 2)) / (2 * b * c);
+        double sine = Math.sqrt(1 - Math.pow(cosine, 2));
+        return (b * c * sine) / 2;
     }
 }
