@@ -155,7 +155,7 @@ public class Task16Test {
                 Arguments.of(new int[]{0, 0, 0, 0}, new int[]{10, 20, 30, 40}, new int[]{-10, -20, -30, -40}),
                 Arguments.of(new int[]{}, new int[]{2, 4, 6}, new int[]{-2, -4, -6}),
                 Arguments.of(new int[]{2, 4, 6}, new int[]{}, new int[]{2, 4, 6}),
-                Arguments.of(new int[]{2, 4, 6}, new int[]{1, 2}, new int[]{1, -2, 6}),
+                Arguments.of(new int[]{2, 4, 6}, new int[]{1, 2}, new int[]{1, 2, 6}),
                 Arguments.of(new int[]{}, new int[]{}, new int[]{})
         );
     }
@@ -232,8 +232,8 @@ public class Task16Test {
 
     static Stream<Arguments> isSimilarSource() {
         return Stream.of(
-                Arguments.of(new int[]{10, 11, 12, 3, 1, 2}, new int[]{1, 2, 3, 4, 10, 5, 11, 6, 12}, true),
-                Arguments.of(new int[]{1, 3, 5, 7, 9}, new int[]{9, 7, 5, 3, 10, 1}, true),
+                Arguments.of(new int[]{4, 10, 5, 6, 11, 12, 3, 1, 2}, new int[]{1, 2, 3, 4, 10, 5, 11, 6, 12}, true),
+                Arguments.of(new int[]{1, 3, 5, 7, 9, 10}, new int[]{9, 7, 5, 3, 10, 1}, true),
                 Arguments.of(new int[]{1, 3, 5, 7, 9}, new int[]{9, 7, 5, 3, 10}, false),
                 Arguments.of(new int[]{1, 3, 5, 7, 9}, new int[]{2, 4, 6, 8, 10}, false),
                 Arguments.of(new int[]{1, 3, 5, 7, 9}, new int[]{}, false),
