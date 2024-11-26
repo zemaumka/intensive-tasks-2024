@@ -112,7 +112,7 @@ public class Task16Test {
     static Stream<Arguments> isEqualSizeSource() {
         return Stream.of(
                 Arguments.of(new int[]{10, 11, 12}, new int[]{11, 16, 1}, true),
-                Arguments.of(new int[]{}, new int[]{}, true),
+                Arguments.of(new int[]{}, new int[]{}, false),
                 Arguments.of(new int[]{1, 2, 3, 4, 5, 6, 7, 0, 0}, new int[]{0, 0, 0, 0, 0, 0}, false),
                 Arguments.of(new int[]{10, 11, 12}, new int[]{16}, false)
         );
