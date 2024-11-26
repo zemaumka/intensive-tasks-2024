@@ -20,6 +20,7 @@ public class Task5 {
         System.out.println(Arrays.toString(getHeights(a, b, c)));
         System.out.println(Arrays.toString(getMedians(a, b, c)));
         System.out.println(Arrays.toString(getBisectors(a, b, c)));
+        System.out.println(Arrays.toString(getBisectors(a, b, c)));
         System.out.println(Arrays.toString(getAngles(a, b, c)));
         System.out.println((getInscribedCircleRadius(a, b, c)));
         System.out.println((getAreaAdvanced(a, b, c)));
@@ -39,12 +40,13 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getAreaByHeron(double a, double b, double c) {
-        if (!isCheckInput(a, b, c)) {
-            return -1;
+        double p = (a + b + c) / 2;
+
+        if (isCheckInput(a, b, c)) {
+            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
-        double p = (a + b + c) / 2;
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        return -1;
     }
 
     /**
@@ -138,11 +140,11 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getInscribedCircleRadius(double a, double b, double c) {
-        if (!isCheckInput(a, b, c)) {
-            return -1;
+        if (isCheckInput(a, b, c)) {
+            return getAreaByHeron(a, b, c) / ((a + b + c) / 2);
         }
 
-        return getAreaByHeron(a, b, c) / ((a + b + c) / 2);
+        return -1;
     }
 
     /**
@@ -153,11 +155,11 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getCircumradius(double a, double b, double c) {
-        if (!isCheckInput(a, b, c)) {
-            return -1;
+        if (isCheckInput(a, b, c)) {
+            return (a * b * c) / (4 * getAreaByHeron(a, b, c));
         }
 
-        return (a * b * c) / (4 * getAreaByHeron(a, b, c));
+        return -1;
     }
 
     /**
@@ -175,12 +177,12 @@ public class Task5 {
      * <p>Если входные данные некорректны - метод должен возвращать -1.
      */
     static double getAreaAdvanced(double a, double b, double c) {
-        if (!isCheckInput(a, b, c)) {
-            return -1;
+        if (isCheckInput(a, b, c)) {
+            double cosine = (Math.pow(c, 2) + Math.pow(b, 2) - Math.pow(a, 2)) / (2 * b * c);
+            double sine = Math.sqrt(1 - Math.pow(cosine, 2));
+            return (b * c * sine) / 2;
         }
 
-        double cosine = (Math.pow(c, 2) + Math.pow(b, 2) - Math.pow(a, 2)) / (2 * b * c);
-        double sine = Math.sqrt(1 - Math.pow(cosine, 2));
-        return (b * c * sine) / 2;
+        return -1;
     }
 }
