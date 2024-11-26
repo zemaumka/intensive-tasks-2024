@@ -60,13 +60,13 @@ public class Task5 {
 
 
         if (isCheckInput(a, b, c)) {
-            double S = getAreaByHeron(a, b, c);
-            double[] h = new double[3];
-            h[0] = 2 * S / b;
-            h[1] = 2 * S / a;
-            h[2] = 2 * S / c;
-            Arrays.sort(h);
-            return h;
+            double area = getAreaByHeron(a, b, c);
+            double[] height = new double[3];
+            height[0] = 2 * area / b;
+            height[1] = 2 * area / a;
+            height[2] = 2 * area / c;
+            Arrays.sort(height);
+            return height;
         }
         return new double[0];
     }
@@ -80,12 +80,12 @@ public class Task5 {
      */
     static double[] getMedians(double a, double b, double c) {
         if (isCheckInput(a, b, c)) {
-            double[] m = new double[3];
-            m[0] = 0.5 * (Math.sqrt(2 * Math.pow(b, 2) + 2 * Math.pow(c, 2) - Math.pow(a, 2)));
-            m[1] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(c, 2) - Math.pow(b, 2)));
-            m[2] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(b, 2) - Math.pow(c, 2)));
-            Arrays.sort(m);
-            return m;
+            double[] median = new double[3];
+            median[0] = 0.5 * (Math.sqrt(2 * Math.pow(b, 2) + 2 * Math.pow(c, 2) - Math.pow(a, 2)));
+            median[1] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(c, 2) - Math.pow(b, 2)));
+            median[2] = 0.5 * (Math.sqrt(2 * Math.pow(a, 2) + 2 * Math.pow(b, 2) - Math.pow(c, 2)));
+            Arrays.sort(median);
+            return median;
         }
 
         return new double[0];
