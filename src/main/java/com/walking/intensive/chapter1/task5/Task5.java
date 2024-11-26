@@ -20,7 +20,6 @@ public class Task5 {
         System.out.println(Arrays.toString(getHeights(a, b, c)));
         System.out.println(Arrays.toString(getMedians(a, b, c)));
         System.out.println(Arrays.toString(getBisectors(a, b, c)));
-        System.out.println(Arrays.toString(getBisectors(a, b, c)));
         System.out.println(Arrays.toString(getAngles(a, b, c)));
         System.out.println((getInscribedCircleRadius(a, b, c)));
         System.out.println((getAreaAdvanced(a, b, c)));
