@@ -1,5 +1,6 @@
 package com.walking.intensive.chapter4.task16;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -90,9 +91,17 @@ public class Task16Test {
 
     @ParameterizedTest
     @MethodSource("removeAllSource")
-    void removeAllTest(int[] expected, int[] arr, int... removingValues) {
+    void removeAllTest(int[] expected, int[] arr, int[] removingValues) {
         int[] result = Task16.removeAll(arr, removingValues);
         assertArrayEquals(expected, result);
+    }
+
+    @Test
+    void removeAllWithoutRemovingTest() {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+
+        int[] result = Task16.removeAll(arr);
+        assertArrayEquals(arr, result);
     }
 
     @ParameterizedTest
@@ -223,7 +232,6 @@ public class Task16Test {
                 Arguments.of(new int[]{11, 12, 3, 4, 5, 6}, new int[]{10, 11, 12, 1, 2, 3, 4, 5, 6, 7},
                         new int[]{10, 1, 7, 2}),
                 Arguments.of(new int[]{3, 4, 5, 6, 7}, new int[]{1, 2, 3, 4, 5, 6, 7}, new int[]{10, 1, 30, 2}),
-                Arguments.of(new int[]{1, 2, 3, 4, 6, 7}, new int[]{1, 2, 3, 4, 5, 6, 7}, 5),
                 Arguments.of(new int[]{1, 2, 3, 4, 5}, new int[]{1, 2, 3, 4, 5}, new int[]{10, 20, 30}),
                 Arguments.of(new int[]{}, new int[]{}, new int[]{10, 20, 30}),
                 Arguments.of(new int[]{1, 2, 3, 4, 5}, new int[]{1, 2, 3, 4, 5}, new int[]{})
