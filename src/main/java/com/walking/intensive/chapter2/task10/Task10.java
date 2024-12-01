@@ -12,10 +12,18 @@ package com.walking.intensive.chapter2.task10;
 public class Task10 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
+        System.out.println(isPalindrome("ара"));
     }
 
     static boolean isPalindrome(String inputString) {
-        // Ваш код
-        return false;
+        if (null == inputString || inputString.length() < 3){
+            return false;
+        }
+
+        inputString = inputString.replaceAll("(?U)[\\pP\\s]", "");
+        StringBuilder flipString = new StringBuilder(inputString);
+        flipString.reverse();
+
+        return new String(flipString).equalsIgnoreCase(inputString);
     }
 }
