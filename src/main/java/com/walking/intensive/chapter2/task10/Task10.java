@@ -16,11 +16,11 @@ public class Task10 {
     }
 
     static boolean isPalindrome(String inputString) {
-        if (null == inputString || inputString.length() < 3){
+        if (null == inputString || inputString.length() < 3) {
             return false;
         }
 
-        inputString = inputString.replaceAll("(?U)[\\pP\\s]", "");
+        inputString = inputString.replaceAll("[\\pP\\s]", "");
         StringBuilder flipString = new StringBuilder(inputString);
         flipString.reverse();
 
