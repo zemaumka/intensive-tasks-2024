@@ -1,6 +1,6 @@
 package com.walking.intensive.chapter3.task13;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 /**
  * Ваша задача - с помощью лейки полить все растения в саду.
