@@ -1,5 +1,7 @@
 package com.walking.intensive.chapter3.task13;
 
+import java.util.Arrays;
+
 /**
  * Ваша задача - с помощью лейки полить все растения в саду.
  * Всего в саду N растений. Они расположены в ряд и слева направо помечены
@@ -50,10 +52,44 @@ package com.walking.intensive.chapter3.task13;
 public class Task13 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
+        System.out.println(getStepsCount(new int[]{4, 1, 2, 4, 5, 6, 7}, 2));
     }
 
     static int getStepsCount(int[] plants, int wateringCanVolume) {
-        // Ваш код
-        return 0;
+        if (!isCheckInput(plants, wateringCanVolume)) {
+            return -1;
+        }
+
+        if (plants.length < 1) {
+            return 0;
+        }
+
+        int steps = 0;
+        int leika = wateringCanVolume;
+
+        for (int i = 0; i < plants.length; i++) {
+            if (leika >= plants[i]) {
+                leika = leika - plants[i];
+                steps = steps + 1;
+            } else {
+                leika = wateringCanVolume;
+                steps = 2 * i + steps;
+                i = i - 1;
+            }
+
+
+        }
+
+        return steps;
+    }
+
+    static boolean isCheckInput(int[] plants, int wateringCanVolume) {
+        for (int i = 0; i < plants.length; i++) {
+            if (plants[i] < 1 || plants[i] > wateringCanVolume) {
+                return false;
+            }
+        }
+
+        return wateringCanVolume > 1;
     }
 }
