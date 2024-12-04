@@ -84,8 +84,8 @@ public class Task13 {
     }
 
     static boolean isCheckInput(int[] plants, int wateringCanVolume) {
-        for (int i = 0; i < plants.length; i++) {
-            if (plants[i] < 1 || plants[i] > wateringCanVolume) {
+        for (int plant : plants) {
+            if (plant < 1 || plant > wateringCanVolume) {
                 return false;
             }
         }
