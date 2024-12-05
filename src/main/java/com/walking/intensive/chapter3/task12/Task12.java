@@ -43,30 +43,22 @@ import java.util.Arrays;
 public class Task12 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
-        System.out.println(Arrays.toString(getMovementsNumber("fgh432")));
+        System.out.println(Arrays.toString(getMovementsNumber("-110")));
     }
 
     static int[] getMovementsNumber(String baskets) {
-        if (!baskets.matches("\\d+")) {
+        if (!isCheckInput(baskets)) {
             return new int[]{};
         }
 
-        String[] strArray = baskets.split("");
-        int[] arrayNumb = new int[strArray.length];
-
-        for (int i = 0; i < arrayNumb.length; i++) {
-            arrayNumb[i] = Integer.parseInt(strArray[i]);
-            if (arrayNumb[i] > 1 || arrayNumb[i] < 0) {
-                return new int[]{};
-            }
-        }
+        char[] chars = baskets.toCharArray();
 
         int sum = 0;
-        int[] resultArray = new int[arrayNumb.length];
+        int[] resultArray = new int[chars.length];
 
-        for (int i = 0; i < arrayNumb.length; i++) {
-            for (int j = 0; j < arrayNumb.length; j++) {
-                if (arrayNumb[j] == 1) {
+        for (int i = 0; i < chars.length; i++) {
+            for (int j = 0; j < chars.length; j++) {
+                if ((chars[j] - '0') == 1) {
                     if (j > i) {
                         sum = sum + (j - i);
                     } else {
@@ -79,5 +71,15 @@ public class Task12 {
         }
 
         return resultArray;
+    }
+
+    static boolean isCheckInput(String baskets) {
+        for (char ch : baskets.toCharArray()) {
+            if (ch < '0' || ch > '1') {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
