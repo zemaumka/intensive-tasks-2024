@@ -56,7 +56,7 @@ public class Task13 {
     }
 
     static int getStepsCount(int[] plants, int wateringCanVolume) {
-        if (!isCheckInput(plants, wateringCanVolume)) {
+        if (!CheckInput(plants, wateringCanVolume)) {
             return -1;
         }
 
@@ -65,25 +65,23 @@ public class Task13 {
         }
 
         int steps = 0;
-        int leika = wateringCanVolume;
+        int wateringCan = wateringCanVolume;
 
         for (int i = 0; i < plants.length; i++) {
-            if (leika >= plants[i]) {
-                leika = leika - plants[i];
+            if (wateringCan >= plants[i]) {
+                wateringCan = wateringCan - plants[i];
                 steps = steps + 1;
             } else {
-                leika = wateringCanVolume;
+                wateringCan = wateringCanVolume;
                 steps = 2 * i + steps;
                 i = i - 1;
             }
-
-
         }
 
         return steps;
     }
 
-    static boolean isCheckInput(int[] plants, int wateringCanVolume) {
+    static boolean CheckInput(int[] plants, int wateringCanVolume) {
         for (int plant : plants) {
             if (plant < 1 || plant > wateringCanVolume) {
                 return false;
