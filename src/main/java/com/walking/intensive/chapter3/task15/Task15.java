@@ -1,6 +1,6 @@
 package com.walking.intensive.chapter3.task15;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 /**
  * Существует город, состоящий из N x N блоков, где каждый блок содержит одно здание в форме вертикальной
