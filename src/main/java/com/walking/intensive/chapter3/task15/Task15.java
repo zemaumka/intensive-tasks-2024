@@ -2,6 +2,8 @@ package com.walking.intensive.chapter3.task15;
 
 //import java.util.Arrays;
 
+import java.util.Arrays;
+
 /**
  * Существует город, состоящий из N x N блоков, где каждый блок содержит одно здание в форме вертикальной
  * квадратной призмы. Линия горизонта города — это внешний контур, образованный всеми зданиями,
@@ -43,26 +45,25 @@ package com.walking.intensive.chapter3.task15;
 public class Task15 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
-        int[][] city2 = {{}, {}, {}};
+        int[][] city2 = {{2, 1}, {1, 3}};
+        System.out.println(Arrays.deepToString(getMaxRowsColumns(city2)));
         System.out.println(getMaxFloors(city2));
     }
 
-
     static int getMaxFloors(int[][] city) {
-        if (!checkInput(city)) {
+        if (!isCheckInput(city)) {
             return -1;
         }
 
         int maxFloor = 0;
+        int[][] maxRowsColumns = getMaxRowsColumns(city);
 
         for (int i = 0; i < city.length; i++) {
-            for (int j = 0; j < city[i].length; j++) {
-                int maxRow = getMaxRow(city[i]);
-                int maxColumn = getMaxColumn(city, j);
-                if (maxColumn > maxRow) {
-                    maxFloor = maxFloor + (maxRow - city[i][j]);
+            for (int j = 0; j < city.length; j++) {
+                if (maxRowsColumns[0][j] > maxRowsColumns[1][i]) {
+                    maxFloor = maxFloor + (maxRowsColumns[1][i] - city[i][j]);
                 } else {
-                    maxFloor = maxFloor + (maxColumn - city[i][j]);
+                    maxFloor = maxFloor + (maxRowsColumns[0][j] - city[i][j]);
                 }
             }
         }
@@ -70,32 +71,24 @@ public class Task15 {
         return maxFloor;
     }
 
-    static int getMaxRow(int[] city) {
-        int maxrow = 0;
+    static int[][] getMaxRowsColumns(int[][] city) {
+        int[][] maxRowsColumns = new int[2][city.length];
 
-        for (int i : city) {
-            if (maxrow < i) {
-                maxrow = i;
+        for (int row = 0; row < city.length; row++) {
+            int maxRow = 0;
+            int maxColumn = 0;
+            for (int columns = 0; columns < city.length; columns++) {
+                maxRow = Math.max(maxRow, city[row][columns]);
+                maxColumn = Math.max(maxColumn, city[columns][row]);
             }
+            maxRowsColumns[0][row] = maxRow;
+            maxRowsColumns[1][row] = maxColumn;
         }
 
-        return maxrow;
+        return maxRowsColumns;
     }
 
-    static int getMaxColumn(int[][] city, int col) {
-        int maxcol = 0;
-
-        for (int i = 0; i < city.length; i++) {
-            if (maxcol < city[i][col]) {
-                maxcol = city[i][col];
-            }
-
-        }
-
-        return maxcol;
-    }
-
-    static boolean checkInput(int[][] city) {
+    static boolean isCheckInput(int[][] city) {
         if (city.length == 0) {
             return false;
         }
@@ -108,7 +101,6 @@ public class Task15 {
                 if (city[i][j] < 0 || city[i].length != city.length) {
                     return false;
                 }
-
             }
         }
 
