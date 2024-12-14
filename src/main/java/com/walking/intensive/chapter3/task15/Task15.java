@@ -1,7 +1,5 @@
 package com.walking.intensive.chapter3.task15;
 
-//import java.util.Arrays;
-
 import java.util.Arrays;
 
 /**
@@ -51,7 +49,7 @@ public class Task15 {
     }
 
     static int getMaxFloors(int[][] city) {
-        if (!isCheckInput(city)) {
+        if (!isValidInput(city)) {
             return -1;
         }
 
@@ -60,11 +58,8 @@ public class Task15 {
 
         for (int i = 0; i < city.length; i++) {
             for (int j = 0; j < city.length; j++) {
-                if (maxRowsColumns[0][j] > maxRowsColumns[1][i]) {
-                    maxFloor = maxFloor + (maxRowsColumns[1][i] - city[i][j]);
-                } else {
-                    maxFloor = maxFloor + (maxRowsColumns[0][j] - city[i][j]);
-                }
+                maxFloor += (maxRowsColumns[0][j] > maxRowsColumns[1][i]) ? maxRowsColumns[1][i] - city[i][j] :
+                        maxRowsColumns[0][j] - city[i][j];
             }
         }
 
@@ -88,17 +83,18 @@ public class Task15 {
         return maxRowsColumns;
     }
 
-    static boolean isCheckInput(int[][] city) {
+    static boolean isValidInput(int[][] city) {
         if (city.length == 0) {
             return false;
         }
 
         for (int i = 0; i < city.length; i++) {
-            if (city[i].length == 0) {
+            if (city[i].length == 0 || city[i].length != city.length) {
                 return false;
             }
+            //city[i].length != city.length
             for (int j = 0; j < city[i].length; j++) {
-                if (city[i][j] < 0 || city[i].length != city.length) {
+                if (city[i][j] < 0) {
                     return false;
                 }
             }
