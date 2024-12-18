@@ -23,7 +23,7 @@ import java.util.Arrays;
 public class Task16 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
-        System.out.println(isSimilar(new int[]{4, 10, 5, 6}, new int[]{4, 6, 10, 5}));
+        System.out.println(Arrays.toString(subtractEach(new int[]{4, 10, 5}, new int[]{4, 6, 10, 5})));
     }
 
     /**
