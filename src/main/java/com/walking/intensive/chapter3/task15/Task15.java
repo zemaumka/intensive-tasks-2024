@@ -58,8 +58,9 @@ public class Task15 {
 
         for (int i = 0; i < city.length; i++) {
             for (int j = 0; j < city.length; j++) {
-                maxFloor += (maxRowsColumns[0][j] > maxRowsColumns[1][i]) ? maxRowsColumns[1][i] - city[i][j] :
-                        maxRowsColumns[0][j] - city[i][j];
+                maxFloor += maxRowsColumns[0][j] > maxRowsColumns[1][i]
+                        ? maxRowsColumns[1][i] - city[i][j]
+                        : maxRowsColumns[0][j] - city[i][j];
             }
         }
 
@@ -92,7 +93,6 @@ public class Task15 {
             if (city[i].length == 0 || city[i].length != city.length) {
                 return false;
             }
-            //city[i].length != city.length
             for (int j = 0; j < city[i].length; j++) {
                 if (city[i][j] < 0) {
                     return false;
