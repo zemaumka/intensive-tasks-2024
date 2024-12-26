@@ -23,7 +23,7 @@ import java.util.Arrays;
 public class Task16 {
     public static void main(String[] args) {
 //        Для собственных проверок можете делать любые изменения в этом методе
-        System.out.println(Arrays.toString(subtractEach(new int[]{4, 10, 5}, new int[]{4, 6, 10, 5})));
+        System.out.println(Arrays.toString(subtractEach(new int[]{4, 10, 5, 7}, new int[]{4, 6})));
     }
 
     /**
@@ -43,7 +43,7 @@ public class Task16 {
      * <p>Идентичными считаются массивы одинаковой длины, для которых arr1[i] == arr2[i] для любого i.
      */
     static boolean isEquals(int[] arr1, int[] arr2) {
-        if (arr1.length > arr2.length) {
+        if (arr1.length != arr2.length) {
             return false;
         }
 
@@ -73,13 +73,13 @@ public class Task16 {
             return new int[]{};
         }
 
-        int[] result = new int[arr.length];
+        int[] resultIncrement = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
-            result[i] = arr[i] + 1;
+            resultIncrement[i] = arr[i] + 1;
         }
 
-        return result;
+        return resultIncrement;
     }
 
     /**
@@ -102,13 +102,13 @@ public class Task16 {
             return new int[]{};
         }
 
-        int[] result = new int[Math.max(arr1.length, arr2.length)];
+        int[] resultMultiply = new int[Math.max(arr1.length, arr2.length)];
 
-        for (int i = 0; i < Math.max(arr1.length, arr2.length); i++) {
-            result[i] = i >= Math.min(arr1.length, arr2.length) ? 0 : arr1[i] * arr2[i];
+        for (int i = 0; i < Math.min(arr1.length, arr2.length); i++) {
+            resultMultiply[i] = arr1[i] * arr2[i];
         }
 
-        return result;
+        return resultMultiply;
     }
 
     /**
@@ -131,19 +131,16 @@ public class Task16 {
             return new int[]{};
         }
 
-        int maxLength = Math.max(arr1.length, arr2.length);
-        int minLength = Math.min(arr1.length, arr2.length);
-        int[] result = new int[maxLength];
-        int[] tmp = new int[maxLength];
+        int[] resultSubtract = new int[Math.max(arr1.length, arr2.length)];
 
-        for (int i = 0; i < maxLength; i++) {
-            if (i < minLength) {
-                tmp[i] = arr1.length > arr2.length ? arr2[i] : arr1[i];
-            }
-            result[i] = arr1.length > arr2.length ? arr1[i] - tmp[i] : tmp[i] - arr2[i];
+        for (int i = 0; i < Math.max(arr1.length, arr2.length); i++) {
+            int element1 = i < arr1.length ? arr1[i] : 0;
+            int element2 = i < arr2.length ? arr2[i] : 0;
+            resultSubtract[i] = element1 - element2;
         }
 
-        return result;
+        return resultSubtract;
+
     }
 
     /**
@@ -163,13 +160,13 @@ public class Task16 {
             return new int[]{};
         }
 
-        int[] result = new int[arr.length];
+        int[] resultReverse = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
-            result[arr.length - 1 - i] = arr[i];
+            resultReverse[arr.length - 1 - i] = arr[i];
         }
 
-        return result;
+        return resultReverse;
     }
 
     /**
@@ -191,19 +188,19 @@ public class Task16 {
             return new int[]{};
         }
 
-        int[] result = new int[arr.length + 1];
+        int[] resultAdd = new int[arr.length + 1];
 
         if (index > arr.length) {
-            System.arraycopy(arr, 0, result, 0, arr.length);
-            result[arr.length] = newValue;
-            return result;
+            System.arraycopy(arr, 0, resultAdd, 0, arr.length);
+            resultAdd[arr.length] = newValue;
+            return resultAdd;
         }
 
-        System.arraycopy(arr, 0, result, 0, index);
-        result[index] = newValue;
-        System.arraycopy(arr, index, result, index + 1, arr.length - index);
+        System.arraycopy(arr, 0, resultAdd, 0, index);
+        resultAdd[index] = newValue;
+        System.arraycopy(arr, index, resultAdd, index + 1, arr.length - index);
 
-        return result;
+        return resultAdd;
     }
 
     /**
@@ -304,12 +301,12 @@ public class Task16 {
             return copyArr;
         }
 
-        int[] result = new int[arr.length - 1];
+        int[] resultRemove = new int[arr.length - 1];
 
-        System.arraycopy(arr, 0, result, 0, index);
-        System.arraycopy(arr, index + 1, result, index, arr.length - 1 - index);
+        System.arraycopy(arr, 0, resultRemove, 0, index);
+        System.arraycopy(arr, index + 1, resultRemove, index, arr.length - 1 - index);
 
-        return result;
+        return resultRemove;
     }
 
     /**
@@ -333,10 +330,10 @@ public class Task16 {
             }
         }
 
-        int[] result = new int[index];
-        System.arraycopy(tmp, 0, result, 0, index);
+        int[] resultRemoveAll = new int[index];
+        System.arraycopy(tmp, 0, resultRemoveAll, 0, index);
 
-        return result;
+        return resultRemoveAll;
     }
 
     /**
@@ -378,11 +375,11 @@ public class Task16 {
             return new int[]{};
         }
 
-        int[] result = new int[arr.length];
+        int[] resultShift = new int[arr.length];
 
-        result[0] = arr[arr.length - 1];
-        System.arraycopy(arr, 0, result, 1, arr.length - 1);
+        resultShift[0] = arr[arr.length - 1];
+        System.arraycopy(arr, 0, resultShift, 1, arr.length - 1);
 
-        return result;
+        return resultShift;
     }
 }
